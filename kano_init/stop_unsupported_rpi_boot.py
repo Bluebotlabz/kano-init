@@ -11,7 +11,7 @@ import time
 
 from kano.utils.shell import run_cmd
 from kano.utils.hardware import is_model_a, is_model_a_plus, is_model_b_beta, \
-    is_model_b, is_model_b_plus, is_model_zero, is_model_zero_w, is_model_2_b
+    is_model_b, is_model_b_plus, is_model_zero, is_model_zero_w, is_model_2_b, is_model_4_b
 
 from kano_init.return_codes import RC
 
@@ -24,7 +24,7 @@ def is_unsupported_rpi():
         is_model_2_b() or
         is_model_b_plus() or is_model_b_beta() or is_model_b() or
         is_model_a() or is_model_a_plus() or
-        is_model_zero() or is_model_zero_w()
+        is_model_zero() or is_model_zero_w() or is_model_4_b()
     )
 
 
@@ -84,6 +84,11 @@ def main(args):
     # console which needs a utf8 font. When that is supported, just switch
     # to _().
     print_tty(N_(
+        "Sorry! This version of Kano OS requires a Raspberry Pi 3 or later.\n"
+        "Don't worry. You can get a version optimized for your computer.\n"
+        "Head to kano.me/downloads and grab the right one for you.\n"
+    ))
+    print(N_(
         "Sorry! This version of Kano OS requires a Raspberry Pi 3 or later.\n"
         "Don't worry. You can get a version optimized for your computer.\n"
         "Head to kano.me/downloads and grab the right one for you.\n"
